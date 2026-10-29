@@ -16,12 +16,12 @@
 
 | 分类 | 编号 | 主要解决什么 | 专题讨论 |
 |---|---|---|---|
-| [相机与标定](docs/camera-and-calibration.md) | CAM-01～05 | 相机移动、裁剪遮挡、标定丢失、换硬件 | [Issues](https://github.com/pm1255/real-robot-field-guide/issues) |
-| [遥操与动作接口](docs/teleoperation-and-actions.md) | TEL-01～05 | 鼠标如何控制、关节／末端动作、开始与成功键 | [Issues](https://github.com/pm1255/real-robot-field-guide/issues) |
-| [采集与存储](docs/capture-and-storage.md) | IO-01～05 | USB 身份、掉线、实际帧率、写盘与中断 | [Issues](https://github.com/pm1255/real-robot-field-guide/issues) |
-| [数据质量与覆盖](docs/data-quality-and-coverage.md) | DATA-01～05 | 覆盖与密度、示范一致性、恢复、标签和切分 | [Issues](https://github.com/pm1255/real-robot-field-guide/issues) |
-| [训练与部署](docs/training-and-deployment.md) | RUN-01～05 | loss、动作变换、推理延迟、公平比较和版本 | [Issues](https://github.com/pm1255/real-robot-field-guide/issues) |
-| [真机测评](docs/evaluation.md) | EVAL-01～05 | 成功定义、多次试验、人工介入、回放与证据 | [Issues](https://github.com/pm1255/real-robot-field-guide/issues) |
+| [相机与标定](docs/camera-and-calibration.md) | CAM-01～05 | 相机移动、裁剪遮挡、标定丢失、换硬件 | [专题 #1](https://github.com/pm1255/real-robot-field-guide/issues/1) |
+| [遥操与动作接口](docs/teleoperation-and-actions.md) | TEL-01～05 | 鼠标如何控制、关节／末端动作、开始与成功键 | [专题 #2](https://github.com/pm1255/real-robot-field-guide/issues/2) |
+| [采集与存储](docs/capture-and-storage.md) | IO-01～05 | USB 身份、掉线、实际帧率、写盘与中断 | [专题 #3](https://github.com/pm1255/real-robot-field-guide/issues/3) |
+| [数据质量与覆盖](docs/data-quality-and-coverage.md) | DATA-01～05 | 覆盖与密度、示范一致性、恢复、标签和切分 | [专题 #4](https://github.com/pm1255/real-robot-field-guide/issues/4) |
+| [训练与部署](docs/training-and-deployment.md) | RUN-01～05 | loss、动作变换、推理延迟、公平比较和版本 | [专题 #5](https://github.com/pm1255/real-robot-field-guide/issues/5) |
+| [真机测评](docs/evaluation.md) | EVAL-01～05 | 成功定义、多次试验、人工介入、回放与证据 | [专题 #6](https://github.com/pm1255/real-robot-field-guide/issues/6) |
 
 ## 学习资料
 
