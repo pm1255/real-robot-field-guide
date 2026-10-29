@@ -3,13 +3,17 @@
   "scope": "静态内容与格式检查，不是真机运行、实验结果或外部链接永久可达性验证。",
   "overall": "passed",
   "counts": {
-    "files": 33,
-    "markdown_files": 20,
-    "local_links": 158,
-    "local_link_fragments": 87,
+    "files": 36,
+    "markdown_files": 23,
+    "local_links": 238,
+    "local_link_fragments": 137,
     "problem_categories": 6,
     "problem_entries": 30,
     "source_records": 19,
+    "entries_with_cause_analysis": 30,
+    "entries_with_lessons": 30,
+    "core_analysis_topics": 10,
+    "public_case_reviews": 3,
     "video_tutorial_or_demo_records": 7,
     "evaluation_video_dataset_records": 1,
     "pinned_public_source_files": 7,
@@ -48,6 +52,23 @@
     "EVAL-04",
     "EVAL-05"
   ],
+  "core_analysis_ids": [
+    "AN-01",
+    "AN-02",
+    "AN-03",
+    "AN-04",
+    "AN-05",
+    "AN-06",
+    "AN-07",
+    "AN-08",
+    "AN-09",
+    "AN-10"
+  ],
+  "case_review_ids": [
+    "CS-01",
+    "CS-02",
+    "CS-03"
+  ],
   "csv_header_columns": {
     "benchmark-register.csv": 21,
     "collection-log.csv": 25,
@@ -57,6 +78,8 @@
   "checks": {
     "markdown_relative_links": "passed",
     "problem_index_consistency": "passed",
+    "cause_and_lesson_coverage": "passed",
+    "core_and_case_ids": "passed",
     "json_structure": "passed",
     "issue_yaml": "passed",
     "csv_header_only": "passed",

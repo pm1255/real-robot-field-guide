@@ -1,6 +1,6 @@
 # 模板使用说明
 
-先填任务书与测评协议，再用 CSV 记录实际过程。所有 CSV **只有表头**，没有示例实验或真实结果；可在表格软件或自己的数据管线中使用。
+遇到问题先用 [问题复盘模板](problem-postmortem.md)记录原因、证据、处理和经验。实际采集与测评先填任务书和协议，再用 CSV 记录过程。所有 CSV **只有表头**，没有示例实验或真实结果；可在表格软件或自己的数据管线中使用。
 
 | 文件 | 一行代表什么 |
 |---|---|
@@ -24,4 +24,4 @@
 - `benchmark-register.csv` 的 `closure_status` 表示证据链是否完成，`performance_acceptance` 另记达标／未达标／待核查。失败结果也可以形成完整测评；成功短片不能替代完整流程。
 - `*_uri` 是实际产物引用，不要求公开；公开发布前移除凭证、受限数据和不适合公开的绝对路径。
 
-Markdown 模板： [采集任务书](collection-plan.md) · [测评协议](evaluation-protocol.md) · [实验记录](experiment-record.md)。
+Markdown 模板： [问题复盘](problem-postmortem.md) · [采集任务书](collection-plan.md) · [测评协议](evaluation-protocol.md) · [实验记录](experiment-record.md)。

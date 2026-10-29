@@ -1,18 +1,36 @@
-# 真机采集与测评问题手册
+# 真机采集、后训练与测评：问题原因与经验总结
 
-面向 Piper 入门者及具身后训练工程实践的中文知识库。先把相机、动作、标定、录制与部署约定对齐，再用独立真机评测决定补数据还是改训练和执行方式。
+本仓库沉淀前面讨论的真机问题：**发生了什么、为什么会发生、证据支持什么、怎样处理与验证、下次应记住什么。** 面向 Piper 入门者与具身后训练工程实践，学习资料用于支撑这些分析和结论。
 
-当前整理 **6 类、30 个问题条目**，提供采集、实验和测评模板，以及文章、代码与视频索引。条目来自公开复盘和通用工程建议，**不表示某台机器人已发生这些故障，也不代表我们复现了来源中的实验**。
+核心内容包括 **10 项讨论结论、6 类 30 个带原因与总结的问题条目、3 篇公开实战复盘**。公开案例已报告的事实、通用机制与现场待验证的原因分别注明；尚未对用户的 Piper 做现场验证。
 
-## 从这里开始
+## 先看这些结论
 
-1. 初次接触 Piper：读 [Piper 入门与接线](docs/piper-start.md)，弄清电脑、机械臂、相机和遥操设备分别做什么。
-2. 准备第一次采集：按 [采集→训练→测评流程](docs/workflow.md)建立一条能回读、能追溯的短轨迹。
-3. 想看实操：按 [视频学习路线](resources/videos.md)观看中文分集，再看长课的采集与评测章节。
-4. 遇到现场问题：在 [30 项问题索引](docs/problem-index.md)找现象，再提交现场问题 Issue。
-5. 准备扩大任务：填写 [采集任务书](templates/collection-plan.md)和 [测评协议](templates/evaluation-protocol.md)，使用 [benchmark 台账](templates/benchmark-register.csv)跟踪各阶段。
+| 讨论的问题 | 原因与经验结论 | 完整分析 |
+|---|---|---|
+| 数据最重要，为什么脚本还会影响性能？ | 字段、配对、采样和优化决定数据如何被利用；先查语义，再比较方法 | [AN-01](docs/causes-and-lessons.md#an-01) |
+| 为什么 loss 很低仍然抓空？ | 离线平均误差没有直接测量多阶段闭环成功，偏差还会累积 | [AN-01](docs/causes-and-lessons.md#an-01) |
+| 相机挪一点、腕部相机移动有什么区别？ | 相机安装关系与预处理改变会改变输入分布；腕部正常随动另作区分 | [AN-02](docs/causes-and-lessons.md#an-02) |
+| 校准文件丢失为什么影响旧模型？ | 重新加载或标定可能改变角度／坐标含义，先核对实际映射 | [AN-03](docs/causes-and-lessons.md#an-03) |
+| USB 掉线、画面互换和卡顿是什么原因？ | 分别定位身份绑定、传输与处理吞吐，处理方法不同 | [AN-04](docs/causes-and-lessons.md#an-04) |
+| Linux、转换器和线缆分别做什么？ | 控制、相机与供电是不同链路，转换器不会自动接通录制 | [AN-05](docs/causes-and-lessons.md#an-05) |
+| 鼠标怎样控制？适配是否等于逆动力学？ | 输入意图需转换为环境接受的动作，末端转关节常涉及逆运动学 | [AN-06](docs/causes-and-lessons.md#an-06) |
+| 开始和成功键在哪里？能遥操为什么没采到？ | 控制、录制事件、保存和任务结果分别实现，逐条回读验收 | [AN-07](docs/causes-and-lessons.md#an-07) |
+| 数据越多、范围越大，覆盖是否越好？ | 独立条件、有效密度和关键组合决定覆盖；按失败分布补采 | [AN-08](docs/causes-and-lessons.md#an-08) |
+| RLinf 开源后还差什么？ | 核对具体版本的硬件、遥操、任务、数据与部署集成，区分 SFT 和在线 RL | [AN-09](docs/causes-and-lessons.md#an-09) |
+| 怎样确认性能提升、benchmark 完成？ | 固定协议、保留全部尝试，将完整流程与性能达标分开记录 | [AN-10](docs/causes-and-lessons.md#an-10) |
 
-## 问题分类
+完整入口：[原因分析与经验总结](docs/causes-and-lessons.md)。第一次搭建可接着看 [Piper 入门](docs/piper-start.md)与 [采集→训练→测评流程](docs/workflow.md)。
+
+## 公开实战中的问题怎样发生
+
+- [CS-01 Sherry Chen](docs/case-studies.md#cs-01)：相机变化、错误重标定和采集分布空洞，怎样同时影响 ACT。
+- [CS-02 ggando](docs/case-studies.md#cs-02)：为什么更多示范仍可能抓空，夹爪变化和采集阻塞又怎样影响数据。
+- [CS-03 ML6](docs/case-studies.md#cs-03)：为什么低 loss、展示顺滑和真实闭环成功需要不同证据。
+
+每篇复盘区分作者报告、机制解释和结论边界；各轮多因素变化时不把结果归因于单一调整。
+
+## 分类问题库：30 项原因与总结
 
 | 分类 | 编号 | 主要解决什么 | 专题讨论 |
 |---|---|---|---|
@@ -23,25 +41,34 @@
 | [训练与部署](docs/training-and-deployment.md) | RUN-01～05 | loss、动作变换、推理延迟、公平比较和版本 | [专题 #5](https://github.com/pm1255/real-robot-field-guide/issues/5) |
 | [真机测评](docs/evaluation.md) | EVAL-01～05 | 成功定义、多次试验、人工介入、回放与证据 | [专题 #6](https://github.com/pm1255/real-robot-field-guide/issues/6) |
 
-## 学习资料
+每项均包含现象与影响、**原因分析、处理与验证、经验总结**及来源；[总表](docs/problem-index.md)可直接按原因查找。
 
-- [文章、官方与社区代码](resources/articles-and-code.md)：优先读三篇第一手复盘，再按硬件选接口参考。
-- [视频与逐次评测记录](resources/videos.md)：区分全流程课程、短演示和带失败样例的评测资料。
-- [结构化来源目录](resources/sources.json)：记录核对日期、硬件、核对深度、适用范围和限制。
-- [RLinf 固定版本源码清单](resources/rlinf-source-manifest.json)：公开链接和哈希；不将当前主分支与固定版本混为一谈。
+## 把现场问题继续沉淀为经验
 
-视频大多只核对页面信息或公开章节，没有完整观看。150 次公开评测记录已核对数据卡与行数，没有逐个审片或独立审计结果。详见 [证据等级与引用规则](docs/evidence-levels.md)。
+记录现象 → 列原因假设及支持／反对证据 → 记录处理与验证 → 形成有适用范围的结论 → 更新分类条目。
+
+使用 [问题复盘模板](templates/problem-postmortem.md)或 [现场问题表单](https://github.com/pm1255/real-robot-field-guide/issues/new?template=01-field-issue.yml)。原因未验证时保留待核查；修复后写清验证结果和后续预防办法。
 
 ## 模板与维护
 
 | 用途 | 模板 |
 |---|---|
+| 沉淀问题原因、处理过程和经验结论 | [问题复盘](templates/problem-postmortem.md) |
 | 定义采集条件、设备和有效示范 | [采集任务书](templates/collection-plan.md) · [逐条采集记录](templates/collection-log.csv) · [覆盖矩阵](templates/coverage-matrix.csv) |
 | 预先固定成功标准与测试条件 | [测评协议](templates/evaluation-protocol.md) · [逐次测评记录](templates/evaluation-log.csv) |
 | 比较数据或训练方案 | [实验记录](templates/experiment-record.md) |
 | 跟踪多个 benchmark 的完整闭环 | [benchmark 台账](templates/benchmark-register.csv) |
 
 CSV 仅有表头，未填入虚构的实验结果。模板是字段建议，需映射到实际录制器的数据结构。
+
+## 辅助学习与引用来源
+
+- [文章、官方与社区代码](resources/articles-and-code.md)：为问题分析提供原始出处。
+- [视频与逐次评测记录](resources/videos.md)：辅助理解操作和证据记录。
+- [19 条结构化来源记录](resources/sources.json)：保留硬件、核对范围及限制。
+- [RLinf 固定版本源码清单](resources/rlinf-source-manifest.json)：公开链接与哈希。
+
+视频多只核对页面或章节，没有完整观看。150 次公开评测只核对数据卡与规模，没有逐条审片。详见 [证据规则](docs/evidence-levels.md)。
 
 欢迎在 [Issues](https://github.com/pm1255/real-robot-field-guide/issues)提交现场问题、资料推荐或实验记录；填写时区分已观测现象、原因假设和已验证结论。提交规则见 [CONTRIBUTING.md](CONTRIBUTING.md)，常用词见 [术语表](docs/glossary.md)。
 

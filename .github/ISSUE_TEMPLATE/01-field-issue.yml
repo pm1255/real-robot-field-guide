@@ -54,6 +54,27 @@ body:
     validations:
       required: true
   - type: textarea
+    id: cause_analysis
+    attributes:
+      label: 原因分析与证据
+      description: 写清候选原因如何产生现象、支持与反对证据；尚未验证的保留为假设
+    validations:
+      required: true
+  - type: textarea
+    id: treatment_result
+    attributes:
+      label: 处理与验证结果
+      description: 记录改变了什么、其他因素是否保持一致、在哪些条件下验证；未处理写等待
+    validations:
+      required: true
+  - type: textarea
+    id: lessons
+    attributes:
+      label: 当前总结与后续预防
+      description: 说明经验适用于什么范围、怎样更早发现或防止重复；证据不足时写出缺口
+    validations:
+      required: true
+  - type: textarea
     id: evidence
     attributes:
       label: 证据与下一步
