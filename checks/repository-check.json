@@ -1,19 +1,24 @@
 {
   "checked_on": "2026-10-29",
-  "scope": "静态内容与格式检查，不是真机运行、实验结果或外部链接永久可达性验证。",
+  "scope": "静态文档、来源摘要、链接及格式检查；不是真机执行、历史质检重跑或外部链接永久可达性验证。",
   "overall": "passed",
   "counts": {
-    "files": 36,
-    "markdown_files": 23,
-    "local_links": 238,
-    "local_link_fragments": 137,
+    "files": 38,
+    "markdown_files": 24,
+    "local_links": 317,
+    "local_link_fragments": 194,
     "problem_categories": 6,
     "problem_entries": 30,
-    "source_records": 19,
+    "field_problem_entries": 8,
+    "source_records": 23,
+    "public_source_records": 20,
+    "restricted_source_records": 3,
     "entries_with_cause_analysis": 30,
     "entries_with_lessons": 30,
+    "field_entries_with_cause_and_lesson": 8,
     "core_analysis_topics": 10,
     "public_case_reviews": 3,
+    "restricted_material_case_reviews": 1,
     "video_tutorial_or_demo_records": 7,
     "evaluation_video_dataset_records": 1,
     "pinned_public_source_files": 7,
@@ -52,6 +57,16 @@
     "EVAL-04",
     "EVAL-05"
   ],
+  "field_problem_ids": [
+    "WIPE-01",
+    "WIPE-02",
+    "WIPE-03",
+    "WIPE-04",
+    "WIPE-05",
+    "WIPE-06",
+    "WIPE-07",
+    "WIPE-08"
+  ],
   "core_analysis_ids": [
     "AN-01",
     "AN-02",
@@ -67,7 +82,8 @@
   "case_review_ids": [
     "CS-01",
     "CS-02",
-    "CS-03"
+    "CS-03",
+    "CS-04"
   ],
   "csv_header_columns": {
     "benchmark-register.csv": 21,
@@ -78,15 +94,20 @@
   "checks": {
     "markdown_relative_links": "passed",
     "problem_index_consistency": "passed",
-    "cause_and_lesson_coverage": "passed",
-    "core_and_case_ids": "passed",
+    "source_and_summary_consistency": "passed",
     "json_structure": "passed",
-    "issue_yaml": "passed",
+    "issue_yaml_syntax": "passed",
     "csv_header_only": "passed",
-    "public_content_pattern_scan": "passed"
+    "public_content_pattern_scan": "passed",
+    "git_diff_whitespace": "passed"
   },
+  "not_repeated": [
+    "未重新下载或执行既有固定版本公开源文件。",
+    "未重新运行受限材料中的历史质检、推理、训练或机器人任务。",
+    "未重新逐项访问既有外部资料链接。"
+  ],
   "public_content_scan": {
-    "scope": "常见私人路径、内部集群标识、凭证格式、私钥和私网地址模式",
+    "scope": "常见私人路径、内部集群标识、受限文档地址、凭证格式、私钥和私网地址；发现仅报告位置，不输出匹配内容。",
     "findings": []
   },
   "errors": []

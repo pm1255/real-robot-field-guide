@@ -4,6 +4,11 @@
 
 核对日期：2026-10-29。逐条核对范围见 [sources.json](sources.json)，核对深度说明见 [证据规则](../docs/evidence-levels.md)。
 
+<a id="d03"></a>
+## D03 RoboDojo 官方真机任务列表
+
+[Real Robot Tasks](https://robodojo-benchmark.com/doc/real-tasks/)。已核对当日公开原文：Piper X、Piper、ARX X5 各 6 项，共 18 项，不包含擦黑板。结论只针对该公开版本，不排除历史或未公开任务集；采用 RoboDojo-real 数据接口不能单独证明任务被官方收录。对应 [擦黑板任务归属核对](../docs/blackboard-wiping.md#wipe-task-and-video)，任务路径摘要见 [证据记录](blackboard-evidence.json)。
+
 ## 先读的第一手复盘
 
 <a id="a01"></a>

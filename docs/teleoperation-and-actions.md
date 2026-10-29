@@ -60,3 +60,5 @@
 - **依据与范围：** [C03](../resources/articles-and-code.md#c03)固定版本 Piper 环境初始化有复位行为；这些是版本事实，不能直接推断任何未检查版本或设备的行为。
 
 完整接线和新手解释见 [Piper 入门](piper-start.md)，采集状态顺序见 [工作流程](workflow.md)。
+
+现场补充：[WIPE-07 夹爪二值化与还原](blackboard-wiping.md#wipe-07)说明主手命令为何不同于从手实际开度，以及只有 0/1 时为何不能恢复全部连续意图；[WIPE-08 EEF-rel](blackboard-wiping.md#wipe-08)说明该版本固定参考、旋转排列与 IK 初值的区别。

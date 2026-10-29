@@ -1,6 +1,6 @@
 {
   "checked_on": "2026-10-29",
-  "source_count": 19,
+  "source_count": 23,
   "experiment_reproduction": false,
   "robot_commands_executed": false,
   "sources": [
@@ -340,6 +340,78 @@
         "未将协议全文逐条审计或复用其参数作为通用标准。"
       ],
       "author": "cons909"
+    },
+    {
+      "id": "D03",
+      "title": "RoboDojo 官方真机任务文档",
+      "author": "RoboDojo Benchmark",
+      "url": "https://robodojo-benchmark.com/doc/real-tasks/",
+      "type": "official_task_catalog",
+      "hardware": "Piper X、Piper、ARX X5",
+      "checked_on": "2026-10-29",
+      "verification_level": "original_text_read",
+      "verified_scope": "核对当日公开原文与 18 个任务路径；没有擦黑板。",
+      "limitations": [
+        "不排除历史或未公开任务集；接口名不能证明官方任务收录。"
+      ],
+      "access": "public"
+    },
+    {
+      "id": "F01",
+      "title": "双臂 Piper 擦黑板月报摘录",
+      "url": null,
+      "type": "user_supplied_monthly_excerpt",
+      "hardware": "双臂 Piper，设备使用代号",
+      "method": "关节混训及 EEF-rel 混训的报告",
+      "checked_on": "2026-10-29",
+      "verification_level": "provided_excerpt_read",
+      "verified_scope": "读取提供的任务目标、5/10、泛化成功案例、剩余故障、DLS 修复陈述和后续计划。",
+      "limitations": [
+        "未独立读取完整原文。",
+        "没有原始 SOP、逐次试次表、失败或自主成功原片，不能独立复核成绩与根因。",
+        "未取得所述 DLS 部署分支，不确认修复验收。"
+      ],
+      "access": "restricted_not_redistributed",
+      "public_summary": "../docs/blackboard-wiping.md"
+    },
+    {
+      "id": "F02",
+      "title": "擦黑板配置、数据语义、相机逐段表与历史日志的只读核对",
+      "url": null,
+      "type": "restricted_engineering_material_review",
+      "hardware": "双臂 Piper 相关数据与接口",
+      "checked_on": "2026-10-29",
+      "verification_level": "restricted_source_and_log_review",
+      "verified_scope": "核对连续夹爪目标、EEF-rel 参考及旋转；重新统计既有 0831 相机表 37/70 异常并抽看已有对比图；读取后续流水线与关节服务的历史日志。",
+      "limitations": [
+        "原始受限源码、日志和逐段原表不随公开仓库分发，公众不能仅据摘要独立审计。",
+        "没有重新运行既有检查、模型或机器人；未全量复看原视频。",
+        "旧日志的代码哈希与命令未逐项还原；部分统计包含旧导出目录。",
+        "后续关节服务计时不是月报 DLS 版 IK 性能。"
+      ],
+      "access": "restricted_not_redistributed",
+      "public_summary": "../docs/blackboard-wiping.md",
+      "evidence_summary": "blackboard-evidence.json"
+    },
+    {
+      "id": "F03",
+      "title": "Piper 擦黑板训练示教的关键帧观察",
+      "url": null,
+      "type": "restricted_training_demonstration",
+      "hardware": "Piper；元信息为双臂擦黑板训练样例",
+      "checked_on": "2026-10-29",
+      "verification_level": "demonstration_keyframes_reviewed",
+      "verified_scope": "约 20.27 秒、30 FPS、608 帧、256×256；抽看 0、3、6、9、12、15、18、20 秒关键帧，左臂固定边框、右臂擦拭并归位，末尾仍有淡白痕。",
+      "limitations": [
+        "没有连续全片或逐次评测审片。",
+        "未确认成功标签、策略运行记录或月报试次对应。",
+        "原片和截图的公开许可未确认，公开仓库仅含观察文字及元信息。"
+      ],
+      "access": "restricted_not_redistributed",
+      "public_summary": "../docs/blackboard-wiping.md#wipe-task-and-video",
+      "evidence_summary": "blackboard-evidence.json"
     }
-  ]
+  ],
+  "public_source_count": 20,
+  "restricted_source_count": 3
 }

@@ -2,6 +2,8 @@
 
 每个阶段都留下能检查的产物，先完成一个小范围的闭环，再扩量与扩任务。下面是工作流程，不是可直接控制任意 Piper 的启动脚本。
 
+具体例子可看 [双臂 Piper 擦黑板流程](blackboard-wiping.md#wipe-workflow)；[SOP 与提采说明](blackboard-wiping.md#wipe-sop)解释标准操作规程、采集需求与验收的区别，原始现场阈值仍需另外取得。
+
 | 阶段 | 做什么 | 可以进入下一阶段的依据 |
 |---|---|---|
 | 1. 定义任务 | 明确对象、部署范围、成功／失败、介入和复位 | 完整 [采集任务书](../templates/collection-plan.md)及初版 [测评协议](../templates/evaluation-protocol.md) |

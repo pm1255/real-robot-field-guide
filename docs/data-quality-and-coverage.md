@@ -4,6 +4,8 @@
 
 下列原因分析说明可能产生该现象的机制，是否适用于现场需结合本项证据核查。整体结论见 [核心分析](causes-and-lessons.md#an-08)。
 
+现场补充：[相机槽位错位](blackboard-wiping.md#wipe-06)与 [夹爪目标二值化](blackboard-wiping.md#wipe-07)展示数据条数与 loss 无法单独排除的语义问题；[擦拭死角](blackboard-wiping.md#wipe-05)说明如何按接触与覆盖缺口决定补采方向，原因仍需对应现场证据。
+
 <a id="data-01"></a>
 ## DATA-01 条数多，但覆盖不足或太稀
 

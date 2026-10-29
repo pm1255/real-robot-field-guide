@@ -2,7 +2,7 @@
 
 本仓库沉淀前面讨论的真机问题：**发生了什么、为什么会发生、证据支持什么、怎样处理与验证、下次应记住什么。** 面向 Piper 入门者与具身后训练工程实践，学习资料用于支撑这些分析和结论。
 
-核心内容包括 **10 项讨论结论、6 类 30 个带原因与总结的问题条目、3 篇公开实战复盘**。公开案例已报告的事实、通用机制与现场待验证的原因分别注明；尚未对用户的 Piper 做现场验证。
+核心内容包括 **10 项讨论结论、6 类 30 个基础问题、8 项擦黑板现场专题、3 篇公开实战复盘与 1 篇现场材料整理**。公开作者报告、受限材料核对、通用机制与待验证原因分别注明；尚未对用户的 Piper 做现场验证。
 
 ## 先看这些结论
 
@@ -22,6 +22,21 @@
 
 完整入口：[原因分析与经验总结](docs/causes-and-lessons.md)。第一次搭建可接着看 [Piper 入门](docs/piper-start.md)与 [采集→训练→测评流程](docs/workflow.md)。
 
+## 新增现场案例：双臂 Piper 擦黑板
+
+[完整复盘：故障定位、处理与评测](docs/blackboard-wiping.md)把本次讨论合并为八项问题：
+
+| 问题 | 主要经验与结论 |
+|---|---|
+| [过热掉臂、甩臂](docs/blackboard-wiping.md#wipe-01) | 对齐硬件状态、目标、IK 与实测反馈；DLS 不独立证明热问题已解决 |
+| [求解慢与动作停顿](docs/blackboard-wiping.md#wipe-03) | 分开计时模型、网络、IK 和队列，记录预测步数与执行步数 |
+| [倾斜压持与右臂死角](docs/blackboard-wiping.md#wipe-04) | 先分清倾斜方式、滑移、离面、可达性与覆盖，再针对原因处理 |
+| [37/70 相机槽位异常](docs/blackboard-wiping.md#wipe-06) | 按 episode 修正映射；跨 episode 错位不证明单条录像中途切换 |
+| [夹爪二值化与 0/1 还原](docs/blackboard-wiping.md#wipe-07) | 区分主手命令和从手开度；只有二值标签时无法恢复全部连续意图 |
+| [EEF-rel 参考与旋转](docs/blackboard-wiping.md#wipe-08) | 核对固定参考、rot6d 排列、左右臂、有效维度和分段执行 |
+
+另含 [SOP 与提采](docs/blackboard-wiping.md#wipe-sop)、[流程](docs/blackboard-wiping.md#wipe-workflow)、[已有质检的证据边界](docs/blackboard-wiping.md#wipe-quality-checks)，以及 [RoboDojo 任务归属与示教／评测视频区别](docs/blackboard-wiping.md#wipe-task-and-video)。月报成绩和 DLS 修复陈述未独立复验；公开版不分发受限原始材料，见 [证据摘要](resources/blackboard-evidence.json)。
+
 ## 公开实战中的问题怎样发生
 
 - [CS-01 Sherry Chen](docs/case-studies.md#cs-01)：相机变化、错误重标定和采集分布空洞，怎样同时影响 ACT。
@@ -30,7 +45,7 @@
 
 每篇复盘区分作者报告、机制解释和结论边界；各轮多因素变化时不把结果归因于单一调整。
 
-## 分类问题库：30 项原因与总结
+## 分类问题库：30 项基础问题与现场专题
 
 | 分类 | 编号 | 主要解决什么 | 专题讨论 |
 |---|---|---|---|
@@ -41,7 +56,7 @@
 | [训练与部署](docs/training-and-deployment.md) | RUN-01～05 | loss、动作变换、推理延迟、公平比较和版本 | [专题 #5](https://github.com/pm1255/real-robot-field-guide/issues/5) |
 | [真机测评](docs/evaluation.md) | EVAL-01～05 | 成功定义、多次试验、人工介入、回放与证据 | [专题 #6](https://github.com/pm1255/real-robot-field-guide/issues/6) |
 
-每项均包含现象与影响、**原因分析、处理与验证、经验总结**及来源；[总表](docs/problem-index.md)可直接按原因查找。
+每项均包含现象与影响、**原因分析、处理与验证、经验总结**及来源；[总表](docs/problem-index.md)同时收录 30 项基础问题与 WIPE-01～08 擦黑板专题，可直接按原因查找。
 
 ## 把现场问题继续沉淀为经验
 
@@ -65,10 +80,11 @@ CSV 仅有表头，未填入虚构的实验结果。模板是字段建议，需�
 
 - [文章、官方与社区代码](resources/articles-and-code.md)：为问题分析提供原始出处。
 - [视频与逐次评测记录](resources/videos.md)：辅助理解操作和证据记录。
-- [19 条结构化来源记录](resources/sources.json)：保留硬件、核对范围及限制。
+- [23 条结构化来源记录](resources/sources.json)：20 条公开资料与 3 条受限材料说明，保留核对范围及限制。
+- [擦黑板证据摘要](resources/blackboard-evidence.json)：区分月报摘录、只读源码／旧日志、示教关键帧与官方任务列表。
 - [RLinf 固定版本源码清单](resources/rlinf-source-manifest.json)：公开链接与哈希。
 
-视频多只核对页面或章节，没有完整观看。150 次公开评测只核对数据卡与规模，没有逐条审片。详见 [证据规则](docs/evidence-levels.md)。
+公开视频多只核对页面或章节；擦黑板受限示教抽看八个时刻的关键帧，没有作为全片或自主成功录像审计。150 次公开评测只核对数据卡与规模，没有逐条审片。详见 [证据规则](docs/evidence-levels.md)。
 
 欢迎在 [Issues](https://github.com/pm1255/real-robot-field-guide/issues)提交现场问题、资料推荐或实验记录；填写时区分已观测现象、原因假设和已验证结论。提交规则见 [CONTRIBUTING.md](CONTRIBUTING.md)，常用词见 [术语表](docs/glossary.md)。
 
