@@ -1,0 +1,345 @@
+{
+  "checked_on": "2026-10-29",
+  "source_count": 19,
+  "experiment_reproduction": false,
+  "robot_commands_executed": false,
+  "sources": [
+    {
+      "title": "How I Trained Action Chunking Transformer (ACT) on SO-101: My Journey, Gotchas, and Lessons",
+      "author": "Sherry Chen",
+      "published": "2025-09-30",
+      "url": "https://huggingface.co/blog/sherryxychen/train-act-on-so-101",
+      "hardware": "SO-101",
+      "method": "ACT imitation learning",
+      "id": "A01",
+      "type": "firsthand_article",
+      "checked_on": "2026-10-29",
+      "verification_level": "original_text_read",
+      "verified_scope": "已阅读相机、关节校准、USB 身份、覆盖及评测相关叙述。",
+      "limitations": [
+        "作者的 SO-101／ACT 个案，未独立复现；设备身份问题不单独证明物理断流根因。"
+      ]
+    },
+    {
+      "title": "Fine-tuning SmolVLA for Cube Pick-and-Place on SO-101",
+      "author": "ggando",
+      "published": "2026-03-01",
+      "url": "https://ggando.com/blog/smolvla-so101/",
+      "hardware": "SO-101, wrist RealSense D405 and overhead Logitech C920",
+      "method": "SmolVLA fine-tuning with ACT comparison",
+      "id": "A02",
+      "type": "firsthand_article",
+      "checked_on": "2026-10-29",
+      "verification_level": "original_text_read",
+      "verified_scope": "已阅读采集与训练各轮迭代、硬件及采集循环问题。",
+      "limitations": [
+        "各轮同时改变多个因素，不能据此隔离因果或推导通用最低示范数量。"
+      ]
+    },
+    {
+      "title": "AI Robotics: A Field Report on Imitation Learning with LeRobot",
+      "author": "Robin Dehullu / ML6",
+      "published": "2025-11-27",
+      "updated": "2025-12-02",
+      "url": "https://www.ml6.eu/en/blog/ai-robotics-a-field-report-on-imitation-learning-with-lerobot",
+      "hardware": "SO-100",
+      "method": "ACT and GR00T-N1",
+      "id": "A03",
+      "type": "firsthand_team_article",
+      "checked_on": "2026-10-29",
+      "verification_level": "original_text_read",
+      "verified_scope": "已阅读实验、评测与推理延迟讨论。",
+      "limitations": [
+        "文章披露部分 GR00T 展示省略推理暂停；不是统一跨模型基准。"
+      ]
+    },
+    {
+      "title": "Fine-tuning Robotics Vision Language Action Models with AMD ROCm and LeRobot",
+      "author": "Abby O'Neill, Sarunas Kalade, Ken O'Brien, Graham Schelle",
+      "published": "2025-07-14",
+      "url": "https://rocm.blogs.amd.com/artificial-intelligence/rocm-lerobot/README.html",
+      "hardware": "Koch leader/follower arms, two cameras, AMD training and deployment hardware",
+      "method": "Pi0 fine-tuning",
+      "id": "A04",
+      "type": "vendor_tutorial",
+      "checked_on": "2026-10-29",
+      "verification_level": "original_text_read",
+      "verified_scope": "已阅读主从采集、设备映射、π0 微调及部署流程。",
+      "limitations": [
+        "Koch／π0／AMD ROCm 教程，不是 Piper／π0.5／RLinf 流程；Phoenix 在此指 AMD 电脑平台。"
+      ]
+    },
+    {
+      "id": "D01",
+      "title": "LeRobot SO-ARM 全流程图文教程",
+      "url": "https://wiki.seeedstudio.com/lerobot_so100m_new/",
+      "type": "vendor_documentation",
+      "hardware": "SO-ARM／SO-100／SO-101，具体按页面版本",
+      "checked_on": "2026-10-29",
+      "verification_level": "original_text_read",
+      "verified_scope": "已阅读校准和遥操相关章节，核对使用一致 robot ID 加载标定的提示。",
+      "limitations": [
+        "未逐步执行教程；SO-ARM 校准动作、路径和参数不能照搬 Piper。"
+      ],
+      "author": "Seeed Studio"
+    },
+    {
+      "title": "手柄遥操机械臂——直观的机械臂控制新体验",
+      "author": "松灵机器人 account on Agilex Community",
+      "published": "2025-12-08",
+      "url": "https://bbs.agilex.ai/d/55-手柄遥操机械臂直观的机械臂控制新体验",
+      "hardware": "Piper and gamepad",
+      "id": "D02",
+      "type": "vendor_community_tutorial",
+      "checked_on": "2026-10-29",
+      "verification_level": "original_text_read",
+      "verified_scope": "已阅读完整可见帖子，包括虚拟／真机入口及按钮映射。",
+      "limitations": [
+        "遥操教程不代表已接通 RLinf 录制器；没有执行代码。"
+      ]
+    },
+    {
+      "id": "C01",
+      "title": "Gamepad_PiPER",
+      "url": "https://github.com/kehuanjack/Gamepad_PiPER",
+      "type": "community_repository",
+      "hardware": "Piper＋游戏手柄",
+      "checked_on": "2026-10-29",
+      "verification_level": "repository_metadata_checked",
+      "verified_scope": "已核对仓库存在、简介及默认 main 分支；D02 帖子链接到此仓库。",
+      "limitations": [
+        "未执行代码，未验证具体提交及与 LeRobot／RLinf 的兼容性。"
+      ],
+      "author": "kehuanjack"
+    },
+    {
+      "id": "C02",
+      "title": "lerobot_piper",
+      "url": "https://github.com/brucecai-2001/lerobot_piper",
+      "type": "community_repository",
+      "hardware": "演示声称支持 Piper，实际版本需定位",
+      "checked_on": "2026-10-29",
+      "verification_level": "default_readme_checked",
+      "verified_scope": "已核对仓库及默认 main 的通用 LeRobot README；V07 简介提供该链接。",
+      "limitations": [
+        "未定位演示对应的 Piper 分支或提交，不能当成即装即用方案。"
+      ],
+      "author": "brucecai-2001"
+    },
+    {
+      "id": "C03",
+      "title": "RLinf 固定版本的真机采集与 Piper 接口",
+      "url": "https://github.com/RLinf/RLinf",
+      "type": "official_repository_snapshot",
+      "hardware": "通用真机框架及固定版本 Piper 接口",
+      "checked_on": "2026-10-29",
+      "verification_level": "public_source_snapshot_checked",
+      "verified_scope": "已核对七个公开源文件，重新下载并按清单验证 SHA256。",
+      "limitations": [
+        "固定提交不是当前主分支的支持承诺；没有执行采集、训练或真机测试。"
+      ],
+      "author": "RLinf",
+      "revision": "91a302ec50ddacd1fdabc5859b85e3661d768236",
+      "snapshot_url": "https://github.com/RLinf/RLinf/tree/91a302ec50ddacd1fdabc5859b85e3661d768236",
+      "source_manifest": "rlinf-source-manifest.json"
+    },
+    {
+      "id": "C04",
+      "title": "pyAgxArm 官方驱动仓库",
+      "url": "https://github.com/agilexrobotics/pyAgxArm",
+      "type": "vendor_repository",
+      "hardware": "Piper／Nero 产品，具体型号与固件需核对",
+      "checked_on": "2026-10-29",
+      "verification_level": "repository_metadata_checked",
+      "verified_scope": "已通过 GitHub API 核对官方组织、仓库简介和默认 master 分支。",
+      "limitations": [
+        "未验证 SDK 安装、型号支持矩阵或实际设备兼容性。"
+      ],
+      "author": "AgileX Robotics"
+    },
+    {
+      "title": "SO-ARM机械臂Lerobot超详细上手教程：5校准及遥操作",
+      "author": "矽递科技SeeedStudio",
+      "published": "2025-11-25",
+      "url": "https://www.bilibili.com/video/BV1w6UUBcEGR/",
+      "hardware": "SO-ARM series",
+      "duration": "10:47",
+      "id": "V01",
+      "type": "chinese_video_tutorial",
+      "checked_on": "2026-10-29",
+      "verification_level": "video_metadata_checked",
+      "verified_scope": "已核对视频页面标题、作者、日期、时长和课程列表。",
+      "limitations": [
+        "未完整观看；部分页面存在登录／试看限制；按键和硬件参数不能直接套用 Piper。"
+      ]
+    },
+    {
+      "title": "SO-ARM机械臂Lerobot超详细上手教程：6添加摄像头",
+      "author": "矽递科技SeeedStudio",
+      "published": "2025-11-25",
+      "url": "https://www.bilibili.com/video/BV1r6UUBFE8r/",
+      "hardware": "SO-ARM series",
+      "duration": "05:06",
+      "id": "V02",
+      "type": "chinese_video_tutorial",
+      "checked_on": "2026-10-29",
+      "verification_level": "video_metadata_checked",
+      "verified_scope": "已核对视频页面标题、作者、日期、时长和课程列表。",
+      "limitations": [
+        "未完整观看；部分页面存在登录／试看限制；按键和硬件参数不能直接套用 Piper。"
+      ]
+    },
+    {
+      "title": "SO-ARM机械臂Lerobot超详细上手教程：7搭建实验场景及采集数据",
+      "author": "矽递科技SeeedStudio",
+      "published": "2025-11-25",
+      "url": "https://www.bilibili.com/video/BV1r6UUBFEzq/",
+      "hardware": "SO-ARM series",
+      "duration": "10:05",
+      "id": "V03",
+      "type": "chinese_video_tutorial",
+      "checked_on": "2026-10-29",
+      "verification_level": "video_metadata_checked",
+      "verified_scope": "已核对视频页面标题、作者、日期、时长和课程列表。",
+      "limitations": [
+        "未完整观看；部分页面存在登录／试看限制；按键和硬件参数不能直接套用 Piper。"
+      ]
+    },
+    {
+      "title": "SO-ARM机械臂Lerobot超详细上手教程：8训练及部署",
+      "author": "矽递科技SeeedStudio",
+      "published": "2025-11-25",
+      "url": "https://www.bilibili.com/video/BV1r6UUBFEz2/",
+      "hardware": "SO-ARM series",
+      "duration": "08:55",
+      "id": "V04",
+      "type": "chinese_video_tutorial",
+      "checked_on": "2026-10-29",
+      "verification_level": "video_metadata_checked",
+      "verified_scope": "已核对视频页面标题、作者、日期、时长和课程列表。",
+      "limitations": [
+        "未完整观看；部分页面存在登录／试看限制；按键和硬件参数不能直接套用 Piper。"
+      ]
+    },
+    {
+      "id": "V05",
+      "title": "Train an ACT Policy for the SO-101 Robot with LeRobot",
+      "url": "https://www.youtube.com/watch?v=-tkEMLOLEwo",
+      "type": "english_long_video",
+      "hardware": "SO-101／ACT",
+      "checked_on": "2026-10-29",
+      "verification_level": "chapters_cross_checked",
+      "verified_scope": "公开章节经 Google 视频索引与 Class Central 课程目录交叉核对。",
+      "limitations": [
+        "播放页访问超时，未获取字幕、未完整观看，无法确认未经剪辑或所有环节完整性。"
+      ],
+      "author": "Trelis Research",
+      "indexed_date": "2025-07-16",
+      "duration": "01:45:19",
+      "chapters": [
+        {
+          "time": "08:53",
+          "seconds": 533,
+          "title": "Calibrating the Motors and Arms"
+        },
+        {
+          "time": "12:33",
+          "seconds": 753,
+          "title": "Teleoperation Setup"
+        },
+        {
+          "time": "27:10",
+          "seconds": 1630,
+          "title": "Recording and Managing Data"
+        },
+        {
+          "time": "39:05",
+          "seconds": 2345,
+          "title": "Training the ACT Model"
+        },
+        {
+          "time": "01:27:04",
+          "seconds": 5224,
+          "title": "Evaluating Model Performance"
+        },
+        {
+          "time": "01:28:37",
+          "seconds": 5317,
+          "title": "Replay and Evaluation of Training Examples"
+        },
+        {
+          "time": "01:35:21",
+          "seconds": 5721,
+          "title": "Challenges with Generalization and Data Requirements"
+        }
+      ],
+      "supporting_urls": [
+        "https://www.classcentral.com/course/youtube-train-an-act-policy-for-the-so-101-robot-with-lerobot-468669"
+      ]
+    },
+    {
+      "id": "V06",
+      "title": "LeRobot训练SO-101机械臂ACT模型全流程解析",
+      "url": "https://www.bilibili.com/video/BV1enHizcEk6/",
+      "type": "chinese_long_video",
+      "hardware": "SO-101／ACT",
+      "checked_on": "2026-10-29",
+      "verification_level": "video_metadata_checked",
+      "verified_scope": "已核对页面标题、作者、发布日期、时长与简介。",
+      "limitations": [
+        "未完整观看；标题和简介不足以确认包含完整多次真机测评。"
+      ],
+      "author": "GPUS开发者",
+      "published": "2025-09-11",
+      "duration": "01:01:53"
+    },
+    {
+      "title": "【开源】松灵piper集成lerobot",
+      "author": "茄子们大喊人类",
+      "published": "2025-03-04",
+      "url": "https://www.bilibili.com/video/BV16H9BYDEva/",
+      "hardware": "Piper with gamepad",
+      "duration": "01:05",
+      "id": "V07",
+      "type": "community_demo_video",
+      "checked_on": "2026-10-29",
+      "verification_level": "video_metadata_checked",
+      "verified_scope": "已核对标题、作者、日期、时长与简介，简介关联 C02。",
+      "limitations": [
+        "仅 1 分 05 秒短演示，未完整观看；不是完整采集、训练与验收教程。"
+      ]
+    },
+    {
+      "id": "E01",
+      "title": "SO-101 SmolVLA Evaluation Videos — V1",
+      "url": "https://huggingface.co/datasets/cons909/V1-LeRobot-SO101-Eval-Videos",
+      "type": "evaluation_video_dataset",
+      "hardware": "SO-101／SmolVLA",
+      "checked_on": "2026-10-29",
+      "verification_level": "dataset_card_and_viewer_checked",
+      "verified_scope": "已阅读数据卡，核对预览 150 行，三种配置各 50 次及逐次日志说明。",
+      "limitations": [
+        "未逐个审看 150 条视频或独立审计标签。",
+        "多相机配置每次仅发布一个视角，作者有说明。",
+        "配置之间检查点步数不同，不能据此推导相机数量的因果效果。"
+      ],
+      "author": "cons909",
+      "reported_trials": 150,
+      "protocol_url": "https://github.com/cons909/V1-LeRobot-SO101-Learning-by-Demonstration-SmolVLA/blob/main/docs/EVALUATION_PROTOCOL.md"
+    },
+    {
+      "id": "E02",
+      "title": "V1 SO-101 Evaluation Protocol",
+      "url": "https://github.com/cons909/V1-LeRobot-SO101-Learning-by-Demonstration-SmolVLA/blob/main/docs/EVALUATION_PROTOCOL.md",
+      "type": "evaluation_protocol",
+      "hardware": "SO-101／SmolVLA",
+      "checked_on": "2026-10-29",
+      "verification_level": "linked_reference_only",
+      "verified_scope": "已核对 E01 数据卡链接到该协议；本目录将其列为进一步阅读。",
+      "limitations": [
+        "未将协议全文逐条审计或复用其参数作为通用标准。"
+      ],
+      "author": "cons909"
+    }
+  ]
+}

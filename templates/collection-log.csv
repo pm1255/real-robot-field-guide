@@ -1,0 +1,1 @@
+episode_id,task_id,condition_id,batch_id,started_at_utc,operator_id,robot_config_id,camera_config_id,calibration_id,code_revision,action_schema_id,outcome,intervention_count,duration_s,num_frames,actual_new_fps,max_gap_ms,time_alignment_status,integrity_status,label_status,valid_for_sft,exclusion_reason,data_uri,evidence_uri,notes

@@ -1,0 +1,38 @@
+name: 实验记录
+description: 记录数据、训练或部署对比及真机测评证据
+title: "[实验] "
+labels: ["type:experiment", "status:needs-evidence"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: 要回答的问题与当前结论
+      description: 没有运行或证据不足时明确说明，不把计划写成结果
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: 数据、模型、现场与版本
+      description: 给出实验 ID、数据切分、代码、检查点、动作定义与硬件标定；受限产物仅描述可公开元信息
+    validations:
+      required: true
+  - type: textarea
+    id: variables
+    attributes:
+      label: 变化因素与控制条件
+      description: 写清哪些数据、训练、部署或硬件因素同时改变
+    validations:
+      required: true
+  - type: textarea
+    id: evaluation
+    attributes:
+      label: 协议、逐次结果与限制
+      description: 记录成功次数／有效次数、全部尝试、人工介入、排除规则、视频与日志；未评测写等待
+    validations:
+      required: true
+  - type: textarea
+    id: monitoring
+    attributes:
+      label: 监控与后续工作
+      description: 已运行阶段给出有实际数据的可访问入口，未开始写等待

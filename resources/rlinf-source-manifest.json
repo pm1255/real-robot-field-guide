@@ -1,0 +1,50 @@
+{
+  "checked_on": "2026-10-29",
+  "repository": "https://github.com/RLinf/RLinf",
+  "revision": "91a302ec50ddacd1fdabc5859b85e3661d768236",
+  "verification": "公开原文重新下载并验证 SHA256；未执行代码或真机测试。",
+  "files": [
+    {
+      "path": "examples/embodiment/collect_real_data.py",
+      "url": "https://raw.githubusercontent.com/RLinf/RLinf/91a302ec50ddacd1fdabc5859b85e3661d768236/examples/embodiment/collect_real_data.py",
+      "sha256": "4231fea58dc346fba95e75b41fc591579fac40b95d4abf84930df2469f640e3b",
+      "size_bytes": 16854
+    },
+    {
+      "path": "examples/embodiment/collect_data.sh",
+      "url": "https://raw.githubusercontent.com/RLinf/RLinf/91a302ec50ddacd1fdabc5859b85e3661d768236/examples/embodiment/collect_data.sh",
+      "sha256": "5e49a2cd97a9bcb6e93252990a2f71dbc1157183ff63ab31c38adf3ae1105b40",
+      "size_bytes": 814
+    },
+    {
+      "path": "examples/embodiment/config/realworld_collect_data.yaml",
+      "url": "https://raw.githubusercontent.com/RLinf/RLinf/91a302ec50ddacd1fdabc5859b85e3661d768236/examples/embodiment/config/realworld_collect_data.yaml",
+      "sha256": "5651390ce6a8fd6d8752213ea4e06c94c9092ef23bf9e363de5adc68a3eaca3a",
+      "size_bytes": 1427
+    },
+    {
+      "path": "rlinf/envs/wrappers/collect_episode.py",
+      "url": "https://raw.githubusercontent.com/RLinf/RLinf/91a302ec50ddacd1fdabc5859b85e3661d768236/rlinf/envs/wrappers/collect_episode.py",
+      "sha256": "0ba3003d6db8e097ea0739eeddf4a0c05e1a3f681132b5f3e2fbb33219dadb4e",
+      "size_bytes": 56755
+    },
+    {
+      "path": "rlinf/envs/real/piper/base.py",
+      "url": "https://raw.githubusercontent.com/RLinf/RLinf/91a302ec50ddacd1fdabc5859b85e3661d768236/rlinf/envs/real/piper/base.py",
+      "sha256": "bf7070053cfd2cdddffdbdca45a022e271d7f286591996c09c7744d298c38341",
+      "size_bytes": 16650
+    },
+    {
+      "path": "rlinf/robotics/parts/arms/piper.py",
+      "url": "https://raw.githubusercontent.com/RLinf/RLinf/91a302ec50ddacd1fdabc5859b85e3661d768236/rlinf/robotics/parts/arms/piper.py",
+      "sha256": "092e2a346f687500df9640d4324635faf8428e219f420b8a58689671807b6943",
+      "size_bytes": 18036
+    },
+    {
+      "path": "examples/embodiment/config/env/piper_reach.yaml",
+      "url": "https://raw.githubusercontent.com/RLinf/RLinf/91a302ec50ddacd1fdabc5859b85e3661d768236/examples/embodiment/config/env/piper_reach.yaml",
+      "sha256": "b1d712394930f7140938257eec118214886fb7488e417d083384d93c907b0b4a",
+      "size_bytes": 617
+    }
+  ]
+}

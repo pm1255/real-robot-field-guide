@@ -1,0 +1,37 @@
+name: 资料推荐
+description: 推荐文章、代码、视频或逐次评测记录，并注明核对深度
+title: "[资料] "
+labels: ["type:resource", "status:curating"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: 原始资料链接
+    validations:
+      required: true
+  - type: textarea
+    id: metadata
+    attributes:
+      label: 标题、作者、硬件与版本
+      description: 视频补时长，代码尽量提供具体分支或提交
+    validations:
+      required: true
+  - type: dropdown
+    id: reviewed_depth
+    attributes:
+      label: 你实际核对到哪一步
+      options:
+        - 仅核对页面或目录
+        - 阅读原文或具体代码
+        - 观看部分片段
+        - 完整观看
+        - 亲自运行并有验证记录
+    validations:
+      required: true
+  - type: textarea
+    id: value_and_limits
+    attributes:
+      label: 能解决什么问题、有什么限制
+      description: 关联问题编号，说明硬件差异；区分作者报告和自己的验证
+    validations:
+      required: true

@@ -1,0 +1,17 @@
+.DS_Store
+.env
+.env.*
+.venv/
+__pycache__/
+*.pyc
+data/
+datasets/
+checkpoints/
+outputs/
+logs/
+local/
+*.mp4
+*.bag
+*.hdf5
+*.pt
+*.pth

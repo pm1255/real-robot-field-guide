@@ -1,0 +1,1 @@
+task_id,condition_id,position_region,orientation_group,object_instance,scene_id,lighting_group,robot_start_id,phase_or_recovery_state,priority,planned_valid_episodes,recorded_episodes,valid_episodes,rejected_episodes,coverage_status,notes

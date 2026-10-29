@@ -1,0 +1,1 @@
+trial_id,attempt_id,task_id,condition_id,protocol_id,run_id,checkpoint_id,code_revision,deployment_config_id,robot_config_id,camera_config_id,calibration_id,started_at_utc,action_source,outcome,autonomous_success,intervention_count,retry_of_attempt_id,duration_s,failure_phase,stop_reason,included_in_primary_metric,exclusion_reason,evidence_status,video_uri,log_uri,notes

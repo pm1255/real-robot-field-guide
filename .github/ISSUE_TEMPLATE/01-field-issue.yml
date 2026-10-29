@@ -1,0 +1,60 @@
+name: 现场问题
+description: 记录真机采集或测评中已观测的问题与待核查原因
+title: "[现场问题] "
+labels: ["type:field-issue", "status:needs-evidence"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: 主要分类
+      options:
+        - 相机与标定 CAM
+        - 遥操与动作接口 TEL
+        - 采集与存储 IO
+        - 数据质量与覆盖 DATA
+        - 训练与部署 RUN
+        - 真机测评 EVAL
+    validations:
+      required: true
+  - type: input
+    id: related_entry
+    attributes:
+      label: 关联问题编号
+      description: 可填写多个编号；没有对应条目可留空
+      placeholder: "例如 CAM-04、RUN-02"
+  - type: textarea
+    id: observation
+    attributes:
+      label: 现象与影响
+      description: 先写实际看到什么、影响哪些环节，再写原因猜测
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence_status
+    attributes:
+      label: 当前结论状态
+      options:
+        - 已观测，原因待核查
+        - 已验证部分原因，范围见下文
+        - 尚未现场检测，准备排查
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 硬件与软件版本
+      description: 机器人、固件、夹爪、相机、输入设备、驱动、代码提交和动作定义；设备可用代号
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: 发生条件与已经检查的范围
+      description: 记录何时发生、频率、最近变化、排查方法和观察结果；未检测部分明确写出
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 证据与下一步
+      description: 提供可公开的日志、画面或数据摘要，移除凭证和私人路径；说明还缺什么证据
